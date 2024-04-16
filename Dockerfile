@@ -19,4 +19,4 @@ RUN chmod +x /root/*.sh
 CMD [ "/bin/bash", "/root/entry-script.sh" ]
 
 ENV JBS_DISABLE_CACHE=true
-RUN /root/run-full-build.sh
+RUN cp -ar /original-content/workspace /root/project/workspace && /root/run-full-build.sh
