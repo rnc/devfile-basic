@@ -20,3 +20,5 @@ CMD [ "/bin/bash", "/root/entry-script.sh" ]
 
 ENV JBS_DISABLE_CACHE=true
 RUN cp -ar /original-content/workspace /root/project/workspace && /root/run-full-build.sh
+FROM scratch
+COPY --from=2 /root/project/artifacts /root/artifacts
